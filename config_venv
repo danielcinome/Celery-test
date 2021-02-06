@@ -8,5 +8,5 @@ virtualenv -p /usr/bin/python3 venv
 # Activate Virtaul env and install dependecies
 source venv/bin/activate
 sudo apt-get -y update
-pip3 install celery requests python-dotenv flask-sqlalchemy
+pip3 install celery requests python-dotenv flask-sqlalchemy redis
 sudo apt-get -y install sqlite3
