@@ -14,7 +14,7 @@ from datetime import datetime
 load_dotenv(verbose=True)
 db_connect = create_engine('sqlite:///database/data.db')
 
-broker= getenv(BROKER_URL)
+broker= "redis://:p53460ffb5359262bb4fa7060ce87f349dcb35ac43ad7361e4eaf744c9a58e84e@ec2-54-175-165-24.compute-1.amazonaws.com:11769"
 app = Celery('project', broker=broker)
 
 @app.task
@@ -28,8 +28,6 @@ def check_weather():
     date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     conn.execute(f'insert into weather (id, variable, value, created_at) values (1, "temperature", {temperature}, "03/21/2020");')
     conn.execute(f'insert into weather (id, variable, value, created_at) values (2, "humidity", {humidity}, "06/12/2020");')
-
-    print(f'This response {temperature, humidity}')
 
 
 app.conf.beat_schedule = {
