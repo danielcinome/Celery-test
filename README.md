@@ -1,5 +1,3 @@
-# Prueba tecnica - TodoLegal
-
 ## Proyecto 2
 1. Desarrollar una función Lambda que consulte a la página https://dweet.io/follow/thecore los valores de “temperature” y “humidity” cada minuto durante 15 minutos
 2. Almacenar los valores consultados en una base de datos
